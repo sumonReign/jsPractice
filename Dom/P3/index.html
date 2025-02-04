@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="images">
+        <li id="img1"> <img src="img1.jpg" alt=""></li>
+        <li id="img2"> <img src="img2.jpg" alt=""></li>
+        <li id="img3"> <img src="img3.jpg" alt=""></li>
+        <li id="img4"> <img src="img4.jpg" alt=""></li>
+    </ul>
+    <script>
+        document.getElementById('images').addEventListener('click', function(e){
+           if(e.target.tagName === "IMG"){
+            let img = e.target.parentNode
+            img.remove()
+           }
+         
+        },false)
+    </script>
+</body>
+</html>
