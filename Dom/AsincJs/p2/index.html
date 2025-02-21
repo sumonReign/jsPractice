@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="background-color: #212121; text-align: center;">
+    <div class="center-buttons">
+        <button  id="btn1">Start</button>
+        <button  id=" btn2">Stop</button>
+    </div>
+   
+<script>
+    function colorGenerator(){
+    let hex = '123456789ABCDEF'
+    let color = "#"
+    for(i = 0; i<6 ; i++){
+        color += hex[Math.round(Math.random() * 16)]
+    }
+    return color
+   }
+
+    let changeBgColor = function (){
+        document.body.style.backgroundColor = colorGenerator()
+    }
+    function stopColorChanging(){}
+    document.getElementById('btn1').addEventListener('click', changeBgColor )
+    document.getElementById('btn2').addEventListener('click', stopColorChanging )
+    
+</script>
+</body>
+</html>

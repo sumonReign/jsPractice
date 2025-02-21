@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My creator is Allah</h1>
+    <button id="btn">Stop</button>
+
+<script>
+    // setInterval(function(){
+    //     document.querySelector('h1').innerHTML = "And He is almighty"
+    // },3000)
+    //
+   let attributesOfAllah = [
+  "Ar-Rahman (The Most Merciful)",
+  "Ar-Rahim (The Most Compassionate)",
+  "Al-Malik (The Sovereign / The King)",
+  "Al-Quddus (The Holy / The Pure)",
+  "As-Salam (The Source of Peace)"
+];
+
+let index = 0
+
+const setInt = setInterval(()=> {
+    document.querySelector('h1').innerHTML = attributesOfAllah[index]
+    index ++
+    
+    if(index >= attributesOfAllah.length){
+        clearInterval(setInt)
+    }
+    document.querySelector('#btn').addEventListener(('click'),()=> clearInterval(setInt)
+    )
+   
+},2000)
+
+
+
+
+
+
+
+    
+    
+    
+    </script>
+
+    
+</body>
+</html
