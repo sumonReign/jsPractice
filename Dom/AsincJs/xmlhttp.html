@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Load Image with XMLHttpRequest</title>
+</head>
+<body>
+    <h2>Image from XMLHttpRequest</h2>
+    <div id="image-container"></div> <!-- Image will be added here -->
+
+    <script>
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "https://picsum.photos/300", true); // Example image URL
+        xhr.responseType = "blob"; // Important for handling image data
+
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                var imgURL = URL.createObjectURL(xhr.response); // Convert blob to URL
+                
+                var img = document.createElement("img"); // Create image element
+                img.src = imgURL;
+                img.alt = "Loaded Image";
+                img.style.maxWidth = "100%"; // Adjust size
+                
+                document.getElementById("image-container").appendChild(img); // Add to page
+            }
+        };
+
+        xhr.send(); // Send the request
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Image Fetch</title>
+    <style>
+        #imgr img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Random Image from Unsplash</h2>
+    <button onclick="fetchImage()">Get New Image</button>
+    <div id="imgr"></div>
+
+    <script>
+        function fetchImage() {
+            fetch("https://source.unsplash.com/random/800x600")
+            .then(response => {
+                document.getElementById("imgr").innerHTML = ""; // Clear old image
+                let img = document.createElement("img");
+                img.src = response.url;
+                img.alt = "Random Unsplash Image";
+                document.getElementById("imgr").appendChild(img);
+            })
+            .catch(error => {
+                console.error("Error fetching image:", error);
+            });
+        }
+
+        // Load a random image on page load
+        fetchImage();
+    </script>
+
+</body>
+</html>
